@@ -1,0 +1,51 @@
+{
+  "name": "k8s-label-selector",
+  "version": "0.1.0",
+  "description": "Parse and match Kubernetes label selectors and field selectors with the exact grammar, error messages and canonical strings of k8s.io/apimachinery.",
+  "keywords": [
+    "kubernetes",
+    "k8s",
+    "label-selector",
+    "labelSelector",
+    "field-selector",
+    "selector",
+    "apimachinery",
+    "matchExpressions",
+    "parser"
+  ],
+  "license": "MIT AND Apache-2.0 AND BSD-3-Clause",
+  "author": "__AUTHOR__",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__GH_OWNER__/k8s-label-selector.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE-apache",
+    "LICENSE-go"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "bench": "node bench/incumbent.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run test:dist",
+    "test:dist": "node --test test/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}

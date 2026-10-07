@@ -14,10 +14,10 @@
     "parser"
   ],
   "license": "MIT AND Apache-2.0 AND BSD-3-Clause",
-  "author": "__AUTHOR__",
+  "author": "kofiadeyemiq",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/__GH_OWNER__/k8s-label-selector.git"
+    "url": "git+https://github.com/quietpelican42/k8s-label-selector.git"
   },
   "type": "module",
   "engines": {
